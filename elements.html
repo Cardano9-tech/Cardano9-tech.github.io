@@ -428,6 +428,75 @@ print 'It took ' + i + ' iterations to sort the deck.';
 
 				<!-- Footer -->
 					<footer id="footer">
+
+                                                 <section>
+  <form id="secureForm">
+    <div class="fields">
+      <div class="field">
+        <label for="name">Name</label>
+        <input type="text" name="name" required 
+               pattern="[A-Za-z ]{2,50}" 
+               title="2-50 letters only">
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" name="email" required
+               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+      </div>
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea name="message" required
+                  maxlength="1000"></textarea>
+      </div>
+    </div>
+    <input type="hidden" name="grecaptcha" id="recaptchaToken">
+    <button type="submit">Send Securely</button>
+  </form>
+</section>
+
+<!-- reCAPTCHA v3 Integration -->
+<script src="https://www.google.com/recaptcha/api.js?render=YOUR_SITE_KEY"></script>
+<script>
+  const SITE_KEY = '6LcKSccqAAAAAIW-vOs7nH8fnoHIhOPU6v249lMF';
+  const API_URL = 'https://script.google.com/macros/s/AKfycbzLIwiIDAs4bRYwC8zis7fe4De2cIWFnN6wsZc8NCfUpZJJSrcogEF_zZF59WGAVKiH/exec';
+
+  // Initialize reCAPTCHA
+  grecaptcha.ready(() => {
+    grecaptcha.execute(SITE_KEY, {action: 'submit'}).then(attachRecaptcha);
+  });
+
+  function attachRecaptcha(token) {
+    document.getElementById('recaptchaToken').value = token;
+  }
+
+  // Secure form submission
+  document.getElementById('secureForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    
+    try {
+      const response = await fetch(API_URL, {
+        method: 'POST',
+        body: new URLSearchParams(formData),
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        }
+      });
+      
+      const result = await response.json();
+      if (!result.success) throw new Error(result.message);
+      
+      alert('Message sent successfully!');
+      e.target.reset();
+      // Refresh reCAPTCHA token
+      grecaptcha.execute(SITE_KEY, {action: 'submit'}).then(attachRecaptcha);
+      
+    } catch (error) {
+      alert(error.message);
+      grecaptcha.execute(SITE_KEY, {action: 'submit'}).then(attachRecaptcha);
+    }
+  });
+</script>
 						
 						<section class="split contact">
 							<section class="alt">

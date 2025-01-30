@@ -599,7 +599,7 @@ document.addEventListener('DOMContentLoaded', () => {
             );
 
             // Submit form
-            const response = await fetch('YOUR_GOOGLE_SCRIPT_URL', {
+            const response = await fetch('https://script.google.com/macros/s/AKfycbztBC993lc3bG8Xn2CVDRtE2aM1LIXo4aub6zXFFrSWz381SOGQpVdY95HT83igiZ4_/exec', {
                 method: 'POST',
                 body: new URLSearchParams({
                     name: form.name.value,

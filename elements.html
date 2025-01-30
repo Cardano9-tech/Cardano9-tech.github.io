@@ -1,35 +1,38 @@
 <!DOCTYPE HTML>
 
 <html>
-	<head>
+<head>
     <title>AITECH by Cardano9 - Shop and Resources</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <meta name="description" content="Official AITECH by Cardano9 platform - Explore our shop and technical resources">
-    <script src="https://www.google.com/recaptcha/api.js?render=6LcKSccqAAAAAIW-vOs7nH8fnoHIhOPU6v249lMF"></script>
     
     <!-- Security Headers -->
     <meta http-equiv="Content-Security-Policy" 
-          content="default-src 'self' 
-	          https://www.google.com/recaptcha/ 
+          content="default-src 'self';
+                  script-src 'self' 
+                  https://www.google.com/recaptcha/
                   https://www.gstatic.com/recaptcha/
                   https://*.googlesyndication.com 
                   https://*.googleapis.com 
-                  https://*.gstatic.com 
                   https://*.google.com 
-                  https://script.google.com 
-                  https://script.googleusercontent.com;
-                  script-src 'self' 
-                  https://*.googlesyndication.com 
-                  https://*.googleapis.com 
+                  'unsafe-eval' 
                   'unsafe-inline';
                   style-src 'self' 
                   'unsafe-inline' 
-                  https://*.googleapis.com;
+                  https://*.googleapis.com 
+                  https://fonts.googleapis.com;
                   img-src 'self' 
                   data: 
                   https://*.google-analytics.com 
-                  https://*.gstatic.com">
+                  https://*.gstatic.com 
+                  https://*.google.com;
+                  frame-src https://www.google.com/recaptcha/;
+                  connect-src 'self' 
+                  https://script.google.com 
+                  https://script.googleusercontent.com;
+                  font-src 'self' 
+                  https://fonts.gstatic.com">
     
     <!-- Preloads -->
     <link rel="preload" href="assets/css/main.css" as="style">
@@ -40,6 +43,9 @@
     <noscript>
         <link rel="stylesheet" href="assets/css/noscript.css">
     </noscript>
+    
+    <!-- reCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6LcKSccqAAAAAIW-vOs7nH8fnoHIhOPU6v249lMF" async defer></script>
     
     <!-- Ads -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9926911153091764" 

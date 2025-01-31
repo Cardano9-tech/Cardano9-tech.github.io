@@ -468,86 +468,89 @@ print 'It took ' + i + ' iterations to sort the deck.';
 					</div>
 
 <!-- Footer Section -->
-<footer id="footer" style="background: #1a1a1a; padding: 3rem 0; color: #e0e0e0;">
+<footer id="footer" style="background: #1a1a1a; padding: 3rem 0; color: #e0e0e0; display: flex; justify-content: space-between;">
     <section class="footer-content">
-        <div class="footer-columns">
+        <div class="footer-columns" style="display: flex; flex-wrap: wrap; justify-content: space-between;">
 
             <!-- Enhanced Contact Form -->
-<form id="secureForm" class="footer-card contact-form">
-    <h3 class="section-title">Contact Us</h3>
-    <div class="fields">
-        <div class="field">
-            <label for="name">Name</label>
-            <input type="text" name="name" required 
-                   class="form-input"
-                   pattern="[A-Za-z ]{2,50}"
-                   title="2-50 letters only">
-            <div class="input-feedback"></div>
-        </div>
-        <div class="field">
-            <label for="email">Email</label>
-            <input type="email" name="email" required
-                   class="form-input"
-                   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
-            <div class="input-feedback"></div>
-        </div>
-        <div class="field">
-            <label for="message">Message</label>
-            <textarea name="message" required
-                      class="form-input message-box"
-                      maxlength="1000"></textarea>
-            <div class="char-counter"><span>0</span>/1000</div>
-        </div>
-    </div>
-    <input type="hidden" name="grecaptcha" id="recaptchaToken">
-    <button type="submit" class="submit-btn">
-        <span class="btn-content">
-            Send Securely
-            <svg class="send-icon" viewBox="0 0 24 24">
-                <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
-            </svg>
-        </span>
-        <div class="loader"></div>
-    </button>
-</form>
+            <form id="secureForm" class="footer-card contact-form" style="flex-basis: 30%; margin: 20px;">
+                <h3 class="section-title">Contact Us</h3>
+                <div class="fields">
+                    <div class="field">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" required 
+                               class="form-input"
+                               pattern="[A-Za-z ]{2,50}"
+                               title="2-50 letters only">
+                        <div class="input-feedback"></div>
+                    </div>
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" required
+                               class="form-input"
+                               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                        <div class="input-feedback"></div>
+                    </div>
+                    <div class="field">
+                        <label for="message">Message</label>
+                        <textarea name="message" required
+                                  class="form-input message-box"
+                                  maxlength="1000"></textarea>
+                        <div class="char-counter"><span>0</span>/1000</div>
+                    </div>
+                </div>
+                <input type="hidden" name="grecaptcha" id="recaptchaToken">
+                <button type="submit" class="submit-btn">
+                    <span class="btn-content">
+                        Send Securely
+                        <svg class="send-icon" viewBox="0 0 24 24">
+                            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                        </svg>
+                    </span>
+                    <div class="loader"></div>
+                </button>
+            </form>
 
-<!-- Enhanced Get in Touch Section -->
-<div class="footer-card contact-info">
-    <h3 class="section-title">Get in Touch</h3>
-    <div class="contact-details">
-        <div class="contact-item">
-            <i class="fas fa-map-marker-alt contact-icon"></i>
-            <p class="contact-text">123 Tech Valley Drive<br>Silicon Valley, CA 94000</p>
-        </div>
-        <div class="contact-item">
-            <i class="fas fa-phone contact-icon"></i>
-            <a href="tel:+15551234567" class="contact-link">+1 (555) 123-4567</a>
-        </div>
-        <div class="contact-item">
-            <i class="fas fa-envelope contact-icon"></i>
-            <a href="mailto:aitechcardano9@gmail.com" class="contact-link">aitechcardano9@gmail.com</a>
-        </div>
-        <div class="social-links">
-            <a href="https://github.com/Cardano9-tech" target="_blank" rel="noopener noreferrer" class="social-link">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="https://x.com/cardano958729" target="_blank" rel="noopener noreferrer" class="social-link">
-                <i class="fab fa-twitter"></i>
-            </a>
-            <a href="https://linkedin.com/company/aitech-cardano9" target="_blank" rel="noopener noreferrer" class="social-link">
-                <i class="fab fa-linkedin"></i>
-            </a>
-        </div>
-    </div>
-</div>
+            <!-- Enhanced Get in Touch Section -->
+            <div class="footer-card contact-info" style="flex-basis: 30%; margin: 20px;">
+                <h3 class="section-title">Get in Touch</h3>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt contact-icon"></i>
+                        <p class="contact-text">123 Tech Valley Drive<br>Silicon Valley, CA 94000</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone contact-icon"></i>
+                        <a href="tel:+15551234567" class="contact-link">+1 (555) 123-4567</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <a href="mailto:aitechcardano9@gmail.com" class="contact-link">aitechcardano9@gmail.com</a>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/Cardano9-tech" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://x.com/cardano958729" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://linkedin.com/company/aitech-cardano9" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-<!-- Enhanced Copyright Section -->
-<div id="copyright" class="copyright-section">
-    <ul class="copyright-list">
-        <li class="copyright-item">&copy; <span id="currentYear">2023</span> AITECH by Cardano9</li>
-        <li class="copyright-item">Design: <a href="https://html5up.net" class="design-credit" target="_blank" rel="noopener">HTML5 UP</a></li>
-    </ul>
-</div>
+            <!-- Enhanced Copyright Section -->
+            <div id="copyright" class="copyright-section" style="flex-basis: 100%; text-align: center; margin-top: 20px;">
+                <ul class="copyright-list">
+                    <li class="copyright-item">&copy; <span id="currentYear">2023</span> AITECH by Cardano9</li>
+                    <li class="copyright-item">Design: <a href="https://html5up.net" class="design-credit" target="_blank" rel="noopener">HTML5 UP</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</footer>
 
 <!-- Enhanced Script Handling -->
 <script>
@@ -835,64 +838,16 @@ document.addEventListener('DOMContentLoaded', () => {
     .message-box {
         height: 150px;
     }
+    
+    footer {
+        flex-direction: column;
+    }
+    
+    .footer-card {
+        margin: 20px 0;
+    }
 }
-</style>
 
-<script>
-// Add interactive validation
-document.querySelectorAll('.form-input').forEach(input => {
-    input.addEventListener('input', () => {
-        if (input.name === 'message') {
-            const counter = input.parentElement.querySelector('.char-counter span');
-            counter.textContent = input.value.length;
-        }
-        input.style.borderColor = input.checkValidity() ? '#4CAF50' : '#f44336';
-    });
-});
-
-// Add hover effect to contact items
-document.querySelectorAll('.contact-item').forEach(item => {
-    item.addEventListener('mouseenter', () => {
-        item.style.transform = 'translateX(5px)';
-    });
-    item.addEventListener('mouseleave', () => {
-        item.style.transform = 'translateX(0)';
-    });
-});
-</script>
-
-		 <title>Custom Notification</title>
-    <style>
-        /* CSS for the notification */
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-        .notification {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #3d3d3d;
-            color: #cccccc;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 300px;
-        }
-
-        .close-btn {
-            color: red;
-            font-size: 24px;
-            cursor: pointer;
-            margin-left: 15px;
-        }
-
-        .close-btn:hover {
-            color: darkred;
-        }
     </style>
 </head>
 <body>

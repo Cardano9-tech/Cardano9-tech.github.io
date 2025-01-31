@@ -468,7 +468,7 @@ print 'It took ' + i + ' iterations to sort the deck.';
 					</div>
 
 <!-- Footer Section -->
-footer id="footer" style="background: #1a1a1a; padding: 3rem 0; color: #e0e0e0;">
+<footer id="footer" style="background: #1a1a1a; padding: 3rem 0; color: #e0e0e0;">
     <section class="footer-content">
         <div class="footer-columns">
 
@@ -560,19 +560,6 @@ footer id="footer" style="background: #1a1a1a; padding: 3rem 0; color: #e0e0e0;"
         </ul>
     </div>
 </footer>
-
-<!-- Enhanced Script Handling -->
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    // Initialize reCAPTCHA
-    const initRecaptcha = () => {
-        grecaptcha.ready(() => {
-            grecaptcha.execute('6LcKSccqAAAAAIW-vOs7nH8fnoHIhOPU6v249lMF', {action: 'submit'})
-                .then(token => {
-                    document.getElementById('recaptchaToken').value = token;
-                });
-        });
-    };
 
  <!-- Enhanced Script Handling -->
 <script>

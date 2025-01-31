@@ -595,7 +595,7 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
 
             // Get new reCAPTCHA token
-            const token = await grecaptcha.execute(6LcKSccqAAAAAIW-vOs7nH8fnoHIhOPU6v249lMF, {action: 'submit'});
+            const token = await grecaptcha.execute(RECAPTCHA_SITE_KEY, {action: 'submit'});
             
             // Submit form data
             const response = await fetch(API_URL, {

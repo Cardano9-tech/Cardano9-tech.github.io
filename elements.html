@@ -467,84 +467,6 @@ print 'It took ' + i + ' iterations to sort the deck.';
 
 					</div>
 
-<style>
-/* Responsive Footer Styles */
-.footer-columns {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-
-.footer-card {
-    background: #1a1a1a;
-    padding: 2rem;
-    border-radius: 8px;
-}
-
-.contact-info p {
-    margin: 0;
-    color: #a0a0a0;
-}
-
-#copyright ul {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .footer-columns {
-        grid-template-columns: 1fr;
-        padding: 0 1rem;
-    }
-
-    .footer-card {
-        padding: 1.5rem;
-    }
-
-    #footer {
-        padding: 2rem 0 !important;
-    }
-
-    #copyright ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
-        text-align: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .footer-columns {
-        gap: 1.5rem;
-    }
-
-    .field input,
-    .field textarea {
-        padding: 0.6rem !important;
-    }
-
-    button[type="submit"] {
-        padding: 1rem 1.5rem !important;
-        font-size: 0.9rem;
-    }
-
-    .contact-info div {
-        gap: 0.8rem !important;
-    }
-
-    .fa-github,
-    .fa-twitter,
-    .fa-linkedin {
-        font-size: 1.2rem !important;
-    }
-}
-</style>
 
 <!-- Footer Section -->
 <footer id="footer" style="background: #1a1a1a; color: #e0e0e0;">
@@ -724,55 +646,83 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
-				<!-- Enhanced Styles -->
-<style>
-    /* Responsive Design */
-    @media (max-width: 768px) {
-        #footer section > div {
-            grid-template-columns: 1fr !important;
-            gap: 2rem !important;
-        }
-        
-        .contact-info {
-            margin-top: 2rem;
-        }
+	<style>
+/* Responsive Footer Styles */
+.footer-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.footer-card {
+    background: #1a1a1a;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.contact-info p {
+    margin: 0;
+    color: #a0a0a0;
+}
+
+#copyright ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer-columns {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
     }
 
-    /* Loader Animation */
-    .loader {
-        width: 20px;
-        height: 20px;
-        border: 3px solid rgba(255,255,255,0.3);
-        border-top-color: #fff;
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
+    .footer-card {
+        padding: 1.5rem;
     }
 
-    /* Button Enhancements */
+    #footer {
+        padding: 2rem 0 !important;
+    }
+
+    #copyright ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-columns {
+        gap: 1.5rem;
+    }
+
+    .field input,
+    .field textarea {
+        padding: 0.6rem !important;
+    }
+
     button[type="submit"] {
-        color: #fff !important;
-        transition: all 0.3s ease;
+        padding: 1rem 1.5rem !important;
+        font-size: 0.9rem;
     }
 
-    button[type="submit"]:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 15px rgba(74, 144, 226, 0.4);
+    .contact-info div {
+        gap: 0.8rem !important;
     }
 
-    /* Input Enhancements */
-    input:focus, textarea:focus {
-        outline: 2px solid #4a90e2;
-        outline-offset: 2px;
+    .fa-github,
+    .fa-twitter,
+    .fa-linkedin {
+        font-size: 1.2rem !important;
     }
-
-    /* Social Links Hover */
-    .social-links a:hover {
-        opacity: 0.8;
-    }
-
-    @keyframes spin {
-        to { transform: rotate(360deg); }
-    }
+}
 </style>
 
 </body>

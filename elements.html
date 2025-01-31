@@ -472,94 +472,82 @@ print 'It took ' + i + ' iterations to sort the deck.';
     <section class="footer-content">
         <div class="footer-columns">
 
-            <!-- Contact Form -->
-            <form id="secureForm" class="footer-card">
-                <h3 style="color: #4a90e2; margin-bottom: 1.5rem;">Contact Us</h3>
-                <div class="fields" style="display: grid; gap: 1.2rem;">
-                    <div class="field">
-                        <label for="name" style="display: block; margin-bottom: 0.5rem; color: #e0e0e0;">Name</label>
-                        <input type="text" name="name" required 
-                            style="width: 100%; padding: 0.8rem; border: 1px solid #3a3a3a; border-radius: 4px; background: #1a1a1a; color: #fff;"
-                            pattern="[A-Za-z ]{2,50}" 
-                            title="2-50 letters only">
-                    </div>
-                    <div class="field">
-                        <label for="email" style="display: block; margin-bottom: 0.5rem; color: #e0e0e0;">Email</label>
-                        <input type="email" name="email" required
-                            style="width: 100%; padding: 0.8rem; border: 1px solid #3a3a3a; border-radius: 4px; background: #1a1a1a; color: #fff;"
-                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
-                    </div>
-                    <div class="field">
-                        <label for="message" style="display: block; margin-bottom: 0.5rem; color: #e0e0e0;">Message</label>
-                        <textarea name="message" required
-                                style="width: 100%; padding: 0.8rem; border: 1px solid #3a3a3a; border-radius: 4px; background: #1a1a1a; color: #fff; height: 120px;"
-                                maxlength="1000"></textarea>
-                    </div>
-                </div>
-                <input type="hidden" name="grecaptcha" id="recaptchaToken">
-                <button type="submit" 
-                    style="background: linear-gradient(135deg, #4a90e2 0%, #2d5aa3 100%); 
-                        color: #fff !important;
-                        padding: 1.2rem 2.5rem;
-                        border: none;
-                        border-radius: 6px;
-                        cursor: pointer;
-                        font-weight: 600;
-                        letter-spacing: 0.5px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        gap: 0.8rem;
-                        transition: all 0.3s ease;
-                        min-height: 50px;
-                        width: 100%;
-                        position: relative;">
-                    <span style="display: inline-block; vertical-align: middle; line-height: 1;">
-                        Send Securely
-                    </span>
-                </button>
-            </form>
-
-            <!-- Get in Touch Section -->
-            <div class="footer-card contact-info">
-                <h3 style="color: #4a90e2; margin-bottom: 1.5rem;">Get in Touch</h3>
-                <div style="display: grid; gap: 1.5rem;">
-                    <div style="display: flex; align-items: center; gap: 1rem;">
-                        <i class="fas fa-map-marker-alt" style="color: #4a90e2; font-size: 1.2rem;"></i>
-                        <p style="margin: 0; color: #a0a0a0;">123 Tech Valley Drive<br>Silicon Valley, CA 94000</p>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 1rem;">
-                        <i class="fas fa-phone" style="color: #4a90e2; font-size: 1.2rem;"></i>
-                        <p style="margin: 0;"><a href="tel:+15551234567" style="color: #4a90e2; text-decoration: none;">+1 (555) 123-4567</a></p>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 1rem;">
-                        <i class="fas fa-envelope" style="color: #4a90e2; font-size: 1.2rem;"></i>
-                        <p style="margin: 0;"><a href="mailto:aitechcardano9@gmail.com" style="color: #4a90e2; text-decoration: none;">aitechcardano9@gmail.com</a></p>
-                    </div>
-                    <div style="display: flex; gap: 1.5rem; margin-top: 1rem;">
-                        <a href="https://github.com/Cardano9-tech" target="_blank" rel="noopener noreferrer" style="color: #4a90e2; font-size: 1.5rem;">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://x.com/cardano958729" target="_blank" rel="noopener noreferrer" style="color: #4a90e2; font-size: 1.5rem;">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="https://linkedin.com/company/aitech-cardano9" target="_blank" rel="noopener noreferrer" style="color: #4a90e2; font-size: 1.5rem;">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            <!-- Enhanced Contact Form -->
+<form id="secureForm" class="footer-card contact-form">
+    <h3 class="section-title">Contact Us</h3>
+    <div class="fields">
+        <div class="field">
+            <label for="name">Name</label>
+            <input type="text" name="name" required 
+                   class="form-input"
+                   pattern="[A-Za-z ]{2,50}"
+                   title="2-50 letters only">
+            <div class="input-feedback"></div>
         </div>
-    </section>
-
-    <!-- Copyright Section -->
-    <div id="copyright">
-        <ul style="list-style: none; padding: 0; margin: 0;">
-            <li style="color: #a0a0a0;">&copy; <span id="currentYear">2023</span> AITECH by Cardano9</li>
-            <li style="color: #a0a0a0;">Design: <a href="https://html5up.net" style="color: #4a90e2; text-decoration: none;" target="_blank" rel="noopener">HTML5 UP</a></li>
-        </ul>
+        <div class="field">
+            <label for="email">Email</label>
+            <input type="email" name="email" required
+                   class="form-input"
+                   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+            <div class="input-feedback"></div>
+        </div>
+        <div class="field">
+            <label for="message">Message</label>
+            <textarea name="message" required
+                      class="form-input message-box"
+                      maxlength="1000"></textarea>
+            <div class="char-counter"><span>0</span>/1000</div>
+        </div>
     </div>
-</footer>
+    <input type="hidden" name="grecaptcha" id="recaptchaToken">
+    <button type="submit" class="submit-btn">
+        <span class="btn-content">
+            Send Securely
+            <svg class="send-icon" viewBox="0 0 24 24">
+                <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+            </svg>
+        </span>
+        <div class="loader"></div>
+    </button>
+</form>
+
+<!-- Enhanced Get in Touch Section -->
+<div class="footer-card contact-info">
+    <h3 class="section-title">Get in Touch</h3>
+    <div class="contact-details">
+        <div class="contact-item">
+            <i class="fas fa-map-marker-alt contact-icon"></i>
+            <p class="contact-text">123 Tech Valley Drive<br>Silicon Valley, CA 94000</p>
+        </div>
+        <div class="contact-item">
+            <i class="fas fa-phone contact-icon"></i>
+            <a href="tel:+15551234567" class="contact-link">+1 (555) 123-4567</a>
+        </div>
+        <div class="contact-item">
+            <i class="fas fa-envelope contact-icon"></i>
+            <a href="mailto:aitechcardano9@gmail.com" class="contact-link">aitechcardano9@gmail.com</a>
+        </div>
+        <div class="social-links">
+            <a href="https://github.com/Cardano9-tech" target="_blank" rel="noopener noreferrer" class="social-link">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://x.com/cardano958729" target="_blank" rel="noopener noreferrer" class="social-link">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://linkedin.com/company/aitech-cardano9" target="_blank" rel="noopener noreferrer" class="social-link">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Enhanced Copyright Section -->
+<div id="copyright" class="copyright-section">
+    <ul class="copyright-list">
+        <li class="copyright-item">&copy; <span id="currentYear">2023</span> AITECH by Cardano9</li>
+        <li class="copyright-item">Design: <a href="https://html5up.net" class="design-credit" target="_blank" rel="noopener">HTML5 UP</a></li>
+    </ul>
+</div>
 
 <!-- Enhanced Script Handling -->
 <script>
@@ -645,103 +633,232 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
-<!-- Enhanced Styles -->
 <style>
-    /* Base Styles */
-    #footer {
-        background: #1a1a1a;
-        color: #e0e0e0;
-        padding: 3rem 0 0;
+/* Enhanced Styles */
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #2d5aa3;
+    --background-dark: #1a1a1a;
+    --background-medium: #2a2a2a;
+    --text-light: #e0e0e0;
+    --text-muted: #a0a0a0;
+    --transition-speed: 0.3s;
+}
+
+/* Contact Form Enhancements */
+.contact-form {
+    position: relative;
+    overflow: hidden;
+}
+
+.form-input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #3a3a3a;
+    border-radius: 8px;
+    background: var(--background-dark);
+    color: var(--text-light);
+    transition: all var(--transition-speed) ease;
+}
+
+.form-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px rgba(74, 144, 226, 0.3);
+    outline: none;
+}
+
+.form-input:hover {
+    transform: translateY(-2px);
+}
+
+.message-box {
+    height: 120px;
+    resize: vertical;
+    min-height: 100px;
+    max-height: 50vh;
+}
+
+.char-counter {
+    text-align: right;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: #fff;
+    padding: 1.2rem 2.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    transition: all var(--transition-speed) ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(74, 144, 226, 0.4);
+}
+
+.send-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+    transition: transform var(--transition-speed) ease;
+}
+
+.submit-btn:hover .send-icon {
+    transform: translateX(3px);
+}
+
+/* Get in Touch Enhancements */
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    transition: all var(--transition-speed) ease;
+}
+
+.contact-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateX(5px);
+}
+
+.contact-icon {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    min-width: 30px;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.social-link {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    transition: all var(--transition-speed) ease;
+}
+
+.social-link:hover {
+    transform: translateY(-3px);
+    opacity: 0.8;
+}
+
+/* Copyright Enhancements */
+.copyright-section {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.design-credit {
+    position: relative;
+}
+
+.design-credit::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width var(--transition-speed) ease;
+}
+
+.design-credit:hover::after {
+    width: 100%;
+}
+
+/* Input Validation Styles */
+.input-feedback {
+    height: 20px;
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+}
+
+.form-input:valid + .input-feedback::after {
+    content: '✓';
+    color: #4CAF50;
+    margin-left: 0.5rem;
+}
+
+.form-input:invalid:not(:placeholder-shown) + .input-feedback::after {
+    content: '⚠ Please enter a valid value';
+    color: #f44336;
+}
+
+/* Responsive Enhancements */
+@media (max-width: 768px) {
+    .contact-item {
+        padding: 0.75rem;
     }
-
-    .footer-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 2rem;
-    }
-
-    .footer-columns {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 3rem;
-    }
-
-    .footer-card {
-        background: #2a2a2a;
-        padding: 2rem;
-        border-radius: 8px;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 1024px) {
-        .footer-columns {
-            gap: 2rem;
-        }
-    }
-
-    @media (max-width: 768px) {
-        .footer-columns {
-            grid-template-columns: 1fr;
-            gap: 2rem;
-        }
-
-        .footer-content {
-            padding: 0 1.5rem;
-        }
-    }
-
-    @media (max-width: 480px) {
-        #footer {
-            padding: 2rem 0 0;
-        }
-
-        .footer-card {
-            padding: 1.5rem;
-        }
-
-        input, textarea, button {
-            font-size: 16px !important;
-        }
-    }
-
-    /* Copyright Section */
-    #copyright {
-        text-align: center;
-        padding: 2rem 1rem;
-        margin-top: 3rem;
-        border-top: 1px solid #3a3a3a;
-    }
-
-    #copyright ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        flex-wrap: wrap;
+    
+    .social-links {
         justify-content: center;
-        gap: 1rem;
     }
+    
+    .form-input {
+        padding: 0.9rem;
+    }
+}
 
-    @media (max-width: 480px) {
-        #copyright ul {
-            flex-direction: column;
-            gap: 0.5rem;
-        }
+@media (max-width: 480px) {
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
     }
-
-    /* Loader Animation */
-    .loader {
-        width: 20px;
-        height: 20px;
-        border: 3px solid rgba(255,255,255,0.3);
-        border-top-color: #fff;
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
+    
+    .contact-icon {
+        font-size: 1.8rem;
     }
-
-    @keyframes spin {
-        to { transform: rotate(360deg); }
+    
+    .message-box {
+        height: 150px;
     }
+}
 </style>
+
+<script>
+// Add interactive validation
+document.querySelectorAll('.form-input').forEach(input => {
+    input.addEventListener('input', () => {
+        if (input.name === 'message') {
+            const counter = input.parentElement.querySelector('.char-counter span');
+            counter.textContent = input.value.length;
+        }
+        input.style.borderColor = input.checkValidity() ? '#4CAF50' : '#f44336';
+    });
+});
+
+// Add hover effect to contact items
+document.querySelectorAll('.contact-item').forEach(item => {
+    item.addEventListener('mouseenter', () => {
+        item.style.transform = 'translateX(5px)';
+    });
+    item.addEventListener('mouseleave', () => {
+        item.style.transform = 'translateX(0)';
+    });
+});
+</script>
 </body>
 </html>

@@ -574,14 +574,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
+ <!-- Enhanced Script Handling -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('secureForm');
+    const submitBtn = form.querySelector('button[type="submit"]');
+    
+    // Ensure reCAPTCHA loads before first form submission
+    const initRecaptcha = () => {
+        grecaptcha.ready(() => {
+            grecaptcha.execute('6LcKSccqAAAAAIW-vOs7nH8fnoHIhOPU6v249lMF', {action: 'submit'})
+                .then(token => {
+                    document.getElementById('recaptchaToken').value = token;
+                }).catch(err => {
+                    console.error("reCAPTCHA error:", err);
+                });
+        });
+    };
+
+    // Load reCAPTCHA on page load
+    initRecaptcha();
+
     // Form submission handler
     const handleFormSubmit = async (e) => {
         e.preventDefault();
-        const form = e.target;
-        const submitBtn = form.querySelector('button[type="submit"]');
+        submitBtn.disabled = true;
         const originalBtnHTML = submitBtn.innerHTML;
 
         try {
+            // Ensure reCAPTCHA is executed before submission
+            const token = await grecaptcha.execute('6LcKSccqAAAAAIW-vOs7nH8fnoHIhOPU6v249lMF', {action: 'submit'});
+            document.getElementById('recaptchaToken').value = token;
+
             // Update button state
             submitBtn.innerHTML = `
                 <span style="display: flex; align-items: center; gap: 0.8rem;">
@@ -589,13 +613,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     Sending...
                 </span>
             `;
-            submitBtn.disabled = true;
-
-            // Get new token
-            const token = await grecaptcha.execute(
-                '6LcKSccqAAAAAIW-vOs7nH8fnoHIhOPU6v249lMF', 
-                {action: 'submit'}
-            );
 
             // Submit form
             const response = await fetch('https://script.google.com/macros/s/AKfycbwCGRiK1kijgn90yTfGdPzDXPws2Rh19SnVjyzlyn-IclDUph4pirb9PqN3L8w5996i/exec', {
@@ -606,14 +623,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     message: form.message.value,
                     token: token
                 }),
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                }
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
             });
 
             const result = await response.json();
             if (!result.success) throw new Error(result.message || 'Submission failed');
-            
+
             // Success handling
             form.reset();
             alert('Message sent successfully!');
@@ -624,18 +639,18 @@ document.addEventListener('DOMContentLoaded', () => {
             // Reset button state
             submitBtn.innerHTML = originalBtnHTML;
             submitBtn.disabled = false;
-            initRecaptcha();
+            initRecaptcha(); // Reload reCAPTCHA after submission
         }
     };
 
-    // Initializations
-    initRecaptcha();
-    document.getElementById('secureForm').addEventListener('submit', handleFormSubmit);
-    
-    // Dynamic year update
+    // Attach event listener
+    form.addEventListener('submit', handleFormSubmit);
+
+    // Update copyright year dynamically
     document.getElementById('currentYear').textContent = new Date().getFullYear();
 });
 </script>
+
 
 <!-- Enhanced Styles -->
 <style>

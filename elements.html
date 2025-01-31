@@ -467,15 +467,93 @@ print 'It took ' + i + ' iterations to sort the deck.';
 
 					</div>
 
+<style>
+/* Responsive Footer Styles */
+.footer-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.footer-card {
+    background: #1a1a1a;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.contact-info p {
+    margin: 0;
+    color: #a0a0a0;
+}
+
+#copyright ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer-columns {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+
+    .footer-card {
+        padding: 1.5rem;
+    }
+
+    #footer {
+        padding: 2rem 0 !important;
+    }
+
+    #copyright ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-columns {
+        gap: 1.5rem;
+    }
+
+    .field input,
+    .field textarea {
+        padding: 0.6rem !important;
+    }
+
+    button[type="submit"] {
+        padding: 1rem 1.5rem !important;
+        font-size: 0.9rem;
+    }
+
+    .contact-info div {
+        gap: 0.8rem !important;
+    }
+
+    .fa-github,
+    .fa-twitter,
+    .fa-linkedin {
+        font-size: 1.2rem !important;
+    }
+}
+</style>
+
 <!-- Footer Section -->
 <footer id="footer" style="background: #1a1a1a; padding: 3rem 0; color: #e0e0e0;">
     <section class="footer-content">
         <div class="footer-columns">
-
             <!-- Contact Form -->
             <form id="secureForm" class="footer-card">
                 <h3 style="color: #4a90e2; margin-bottom: 1.5rem;">Contact Us</h3>
-                <div class="fields" style="display: grid; gap: 1.2rem;">
+                <div class="fields" style="display: grid; gap: 1rem;">
                     <div class="field">
                         <label for="name" style="display: block; margin-bottom: 0.5rem; color: #e0e0e0;">Name</label>
                         <input type="text" name="name" required 
@@ -492,7 +570,7 @@ print 'It took ' + i + ' iterations to sort the deck.';
                     <div class="field">
                         <label for="message" style="display: block; margin-bottom: 0.5rem; color: #e0e0e0;">Message</label>
                         <textarea name="message" required
-                                style="width: 100%; padding: 0.8rem; border: 1px solid #3a3a3a; border-radius: 4px; background: #1a1a1a; color: #fff; height: 120px;"
+                                style="width: 100%; padding: 0.8rem; border: 1px solid #3a3a3a; border-radius: 4px; background: #1a1a1a; color: #fff; min-height: 120px;"
                                 maxlength="1000"></textarea>
                     </div>
                 </div>
@@ -506,17 +584,10 @@ print 'It took ' + i + ' iterations to sort the deck.';
                         cursor: pointer;
                         font-weight: 600;
                         letter-spacing: 0.5px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        gap: 0.8rem;
                         transition: all 0.3s ease;
-                        min-height: 50px;
                         width: 100%;
-                        position: relative;">
-                    <span style="display: inline-block; vertical-align: middle; line-height: 1;">
-                        Send Securely
-                    </span>
+                        margin-top: 1rem;">
+                    Send Securely
                 </button>
             </form>
 
@@ -526,25 +597,25 @@ print 'It took ' + i + ' iterations to sort the deck.';
                 <div style="display: grid; gap: 1.5rem;">
                     <div style="display: flex; align-items: center; gap: 1rem;">
                         <i class="fas fa-map-marker-alt" style="color: #4a90e2; font-size: 1.2rem;"></i>
-                        <p style="margin: 0; color: #a0a0a0;">123 Tech Valley Drive<br>Silicon Valley, CA 94000</p>
+                        <p>123 Tech Valley Drive<br>Silicon Valley, CA 94000</p>
                     </div>
                     <div style="display: flex; align-items: center; gap: 1rem;">
                         <i class="fas fa-phone" style="color: #4a90e2; font-size: 1.2rem;"></i>
-                        <p style="margin: 0;"><a href="tel:+15551234567" style="color: #4a90e2; text-decoration: none;">+1 (555) 123-4567</a></p>
+                        <p><a href="tel:+15551234567" style="color: #4a90e2; text-decoration: none;">+1 (555) 123-4567</a></p>
                     </div>
                     <div style="display: flex; align-items: center; gap: 1rem;">
                         <i class="fas fa-envelope" style="color: #4a90e2; font-size: 1.2rem;"></i>
-                        <p style="margin: 0;"><a href="mailto:aitechcardano9@gmail.com" style="color: #4a90e2; text-decoration: none;">aitechcardano9@gmail.com</a></p>
+                        <p><a href="mailto:aitechcardano9@gmail.com" style="color: #4a90e2; text-decoration: none;">aitechcardano9@gmail.com</a></p>
                     </div>
                     <div style="display: flex; gap: 1.5rem; margin-top: 1rem;">
-                        <a href="https://github.com/Cardano9-tech" target="_blank" rel="noopener noreferrer" style="color: #4a90e2; font-size: 1.5rem;">
-                            <i class="fab fa-github"></i>
+                        <a href="https://github.com/Cardano9-tech" target="_blank" rel="noopener noreferrer" style="color: #4a90e2;">
+                            <i class="fab fa-github" style="font-size: 1.5rem;"></i>
                         </a>
-                        <a href="https://x.com/cardano958729" target="_blank" rel="noopener noreferrer" style="color: #4a90e2; font-size: 1.5rem;">
-                            <i class="fab fa-twitter"></i>
+                        <a href="https://x.com/cardano958729" target="_blank" rel="noopener noreferrer" style="color: #4a90e2;">
+                            <i class="fab fa-twitter" style="font-size: 1.5rem;"></i>
                         </a>
-                        <a href="https://linkedin.com/company/aitech-cardano9" target="_blank" rel="noopener noreferrer" style="color: #4a90e2; font-size: 1.5rem;">
-                            <i class="fab fa-linkedin"></i>
+                        <a href="https://linkedin.com/company/aitech-cardano9" target="_blank" rel="noopener noreferrer" style="color: #4a90e2;">
+                            <i class="fab fa-linkedin" style="font-size: 1.5rem;"></i>
                         </a>
                     </div>
                 </div>
@@ -560,7 +631,6 @@ print 'It took ' + i + ' iterations to sort the deck.';
         </ul>
     </div>
 </footer>
-
 <!-- Enhanced Script Handling -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
@@ -645,103 +715,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
-<!-- Enhanced Styles -->
-<style>
-    /* Base Styles */
-    #footer {
-        background: #1a1a1a;
-        color: #e0e0e0;
-        padding: 3rem 0 0;
-    }
 
-    .footer-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 2rem;
-    }
-
-    .footer-columns {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 3rem;
-    }
-
-    .footer-card {
-        background: #2a2a2a;
-        padding: 2rem;
-        border-radius: 8px;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 1024px) {
-        .footer-columns {
-            gap: 2rem;
-        }
-    }
-
-    @media (max-width: 768px) {
-        .footer-columns {
-            grid-template-columns: 1fr;
-            gap: 2rem;
-        }
-
-        .footer-content {
-            padding: 0 1.5rem;
-        }
-    }
-
-    @media (max-width: 480px) {
-        #footer {
-            padding: 2rem 0 0;
-        }
-
-        .footer-card {
-            padding: 1.5rem;
-        }
-
-        input, textarea, button {
-            font-size: 16px !important;
-        }
-    }
-
-    /* Copyright Section */
-    #copyright {
-        text-align: center;
-        padding: 2rem 1rem;
-        margin-top: 3rem;
-        border-top: 1px solid #3a3a3a;
-    }
-
-    #copyright ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
-    }
-
-    @media (max-width: 480px) {
-        #copyright ul {
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-    }
-
-    /* Loader Animation */
-    .loader {
-        width: 20px;
-        height: 20px;
-        border: 3px solid rgba(255,255,255,0.3);
-        border-top-color: #fff;
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-    }
-
-    @keyframes spin {
-        to { transform: rotate(360deg); }
-    }
-</style>
 </body>
 </html>

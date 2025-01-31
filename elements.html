@@ -469,11 +469,11 @@ print 'It took ' + i + ' iterations to sort the deck.';
 
       <!-- Footer Section -->
 footer id="footer" style="background: #1a1a1a; padding: 3rem 0; color: #e0e0e0;">
-    <section style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
+    <section class="footer-content">
+        <div class="footer-columns">
 
             <!-- Contact Form -->
-            <form id="secureForm" style="background: #2a2a2a; padding: 2rem; border-radius: 8px;">
+            <form id="secureForm" class="footer-card">
                 <h3 style="color: #4a90e2; margin-bottom: 1.5rem;">Contact Us</h3>
                 <div class="fields" style="display: grid; gap: 1.2rem;">
                     <div class="field">
@@ -521,7 +521,7 @@ footer id="footer" style="background: #1a1a1a; padding: 3rem 0; color: #e0e0e0;"
             </form>
 
             <!-- Get in Touch Section -->
-            <div style="background: #2a2a2a; padding: 2rem; border-radius: 8px;">
+            <div class="footer-card contact-info">
                 <h3 style="color: #4a90e2; margin-bottom: 1.5rem;">Get in Touch</h3>
                 <div style="display: grid; gap: 1.5rem;">
                     <div style="display: flex; align-items: center; gap: 1rem;">
@@ -553,7 +553,7 @@ footer id="footer" style="background: #1a1a1a; padding: 3rem 0; color: #e0e0e0;"
     </section>
 
     <!-- Copyright Section -->
-    <div id="copyright" style="text-align: center; padding: 2rem 0; margin-top: 3rem; border-top: 1px solid #3a3a3a;">
+    <div id="copyright">
         <ul style="list-style: none; padding: 0; margin: 0;">
             <li style="color: #a0a0a0;">&copy; <span id="currentYear">2023</span> AITECH by Cardano9</li>
             <li style="color: #a0a0a0;">Design: <a href="https://html5up.net" style="color: #4a90e2; text-decoration: none;" target="_blank" rel="noopener">HTML5 UP</a></li>
@@ -639,52 +639,93 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <!-- Enhanced Styles -->
 <style>
+    /* Base Footer Styles */
+    #footer {
+        padding: 3rem 0 0;
+    }
+
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    .footer-columns {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+
+    .footer-card {
+        background: #2a2a2a;
+        padding: 2rem;
+        border-radius: 8px;
+    }
+
     /* Responsive Design */
+    @media (max-width: 1024px) {
+        .footer-columns {
+            gap: 2rem;
+        }
+    }
+
     @media (max-width: 768px) {
-        #footer section > div {
-            grid-template-columns: 1fr !important;
-            gap: 2rem !important;
+        .footer-columns {
+            grid-template-columns: 1fr;
+            gap: 2rem;
         }
-        
-        .contact-info {
-            margin-top: 2rem;
+
+        .footer-content {
+            padding: 0 1.5rem;
         }
     }
 
-    /* Loader Animation */
-    .loader {
-        width: 20px;
-        height: 20px;
-        border: 3px solid rgba(255,255,255,0.3);
-        border-top-color: #fff;
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
+    @media (max-width: 480px) {
+        #footer {
+            padding: 2rem 0 0;
+        }
+
+        .footer-card {
+            padding: 1.5rem;
+        }
+
+        .footer-content {
+            padding: 0 1rem;
+        }
+
+        /* Adjust form elements for mobile */
+        input, textarea, button {
+            font-size: 16px !important; /* Prevent zoom on iOS */
+        }
+
+        .social-links {
+            justify-content: center;
+        }
     }
 
-    /* Button Enhancements */
-    button[type="submit"] {
-        color: #fff !important;
-        transition: all 0.3s ease;
+    /* Copyright Section */
+    #copyright {
+        text-align: center;
+        padding: 2rem 1rem;
+        margin-top: 3rem;
+        border-top: 1px solid #3a3a3a;
     }
 
-    button[type="submit"]:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 15px rgba(74, 144, 226, 0.4);
+    #copyright ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
     }
 
-    /* Input Enhancements */
-    input:focus, textarea:focus {
-        outline: 2px solid #4a90e2;
-        outline-offset: 2px;
-    }
-
-    /* Social Links Hover */
-    .social-links a:hover {
-        opacity: 0.8;
-    }
-
-    @keyframes spin {
-        to { transform: rotate(360deg); }
+    @media (max-width: 480px) {
+        #copyright ul {
+            flex-direction: column;
+            gap: 0.5rem;
+        }
     }
 </style>
 </body>

@@ -547,13 +547,14 @@ print 'It took ' + i + ' iterations to sort the deck.';
 </style>
 
 <!-- Footer Section -->
-<footer id="footer" style="background: #1a1a1a; padding: 3rem 0; color: #e0e0e0;">
+<footer id="footer" style="background: #1a1a1a; color: #e0e0e0;">
     <section class="footer-content">
         <div class="footer-columns">
+
             <!-- Contact Form -->
             <form id="secureForm" class="footer-card">
                 <h3 style="color: #4a90e2; margin-bottom: 1.5rem;">Contact Us</h3>
-                <div class="fields" style="display: grid; gap: 1rem;">
+                <div class="fields" style="display: grid; gap: 1.2rem;">
                     <div class="field">
                         <label for="name" style="display: block; margin-bottom: 0.5rem; color: #e0e0e0;">Name</label>
                         <input type="text" name="name" required 
@@ -570,7 +571,7 @@ print 'It took ' + i + ' iterations to sort the deck.';
                     <div class="field">
                         <label for="message" style="display: block; margin-bottom: 0.5rem; color: #e0e0e0;">Message</label>
                         <textarea name="message" required
-                                style="width: 100%; padding: 0.8rem; border: 1px solid #3a3a3a; border-radius: 4px; background: #1a1a1a; color: #fff; min-height: 120px;"
+                                style="width: 100%; padding: 0.8rem; border: 1px solid #3a3a3a; border-radius: 4px; background: #1a1a1a; color: #fff; height: 120px;"
                                 maxlength="1000"></textarea>
                     </div>
                 </div>
@@ -584,10 +585,17 @@ print 'It took ' + i + ' iterations to sort the deck.';
                         cursor: pointer;
                         font-weight: 600;
                         letter-spacing: 0.5px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 0.8rem;
                         transition: all 0.3s ease;
+                        min-height: 50px;
                         width: 100%;
-                        margin-top: 1rem;">
-                    Send Securely
+                        position: relative;">
+                    <span style="display: inline-block; vertical-align: middle; line-height: 1;">
+                        Send Securely
+                    </span>
                 </button>
             </form>
 
@@ -597,25 +605,25 @@ print 'It took ' + i + ' iterations to sort the deck.';
                 <div style="display: grid; gap: 1.5rem;">
                     <div style="display: flex; align-items: center; gap: 1rem;">
                         <i class="fas fa-map-marker-alt" style="color: #4a90e2; font-size: 1.2rem;"></i>
-                        <p>123 Tech Valley Drive<br>Silicon Valley, CA 94000</p>
+                        <p style="margin: 0; color: #a0a0a0;">123 Tech Valley Drive<br>Silicon Valley, CA 94000</p>
                     </div>
                     <div style="display: flex; align-items: center; gap: 1rem;">
                         <i class="fas fa-phone" style="color: #4a90e2; font-size: 1.2rem;"></i>
-                        <p><a href="tel:+15551234567" style="color: #4a90e2; text-decoration: none;">+1 (555) 123-4567</a></p>
+                        <p style="margin: 0;"><a href="tel:+15551234567" style="color: #4a90e2; text-decoration: none;">+1 (555) 123-4567</a></p>
                     </div>
                     <div style="display: flex; align-items: center; gap: 1rem;">
                         <i class="fas fa-envelope" style="color: #4a90e2; font-size: 1.2rem;"></i>
-                        <p><a href="mailto:aitechcardano9@gmail.com" style="color: #4a90e2; text-decoration: none;">aitechcardano9@gmail.com</a></p>
+                        <p style="margin: 0;"><a href="mailto:aitechcardano9@gmail.com" style="color: #4a90e2; text-decoration: none;">aitechcardano9@gmail.com</a></p>
                     </div>
                     <div style="display: flex; gap: 1.5rem; margin-top: 1rem;">
-                        <a href="https://github.com/Cardano9-tech" target="_blank" rel="noopener noreferrer" style="color: #4a90e2;">
-                            <i class="fab fa-github" style="font-size: 1.5rem;"></i>
+                        <a href="https://github.com/Cardano9-tech" target="_blank" rel="noopener noreferrer" style="color: #4a90e2; font-size: 1.5rem;">
+                            <i class="fab fa-github"></i>
                         </a>
-                        <a href="https://x.com/cardano958729" target="_blank" rel="noopener noreferrer" style="color: #4a90e2;">
-                            <i class="fab fa-twitter" style="font-size: 1.5rem;"></i>
+                        <a href="https://x.com/cardano958729" target="_blank" rel="noopener noreferrer" style="color: #4a90e2; font-size: 1.5rem;">
+                            <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="https://linkedin.com/company/aitech-cardano9" target="_blank" rel="noopener noreferrer" style="color: #4a90e2;">
-                            <i class="fab fa-linkedin" style="font-size: 1.5rem;"></i>
+                        <a href="https://linkedin.com/company/aitech-cardano9" target="_blank" rel="noopener noreferrer" style="color: #4a90e2; font-size: 1.5rem;">
+                            <i class="fab fa-linkedin"></i>
                         </a>
                     </div>
                 </div>
@@ -631,6 +639,7 @@ print 'It took ' + i + ' iterations to sort the deck.';
         </ul>
     </div>
 </footer>
+				
 <!-- Enhanced Script Handling -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
@@ -715,6 +724,56 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+				<!-- Enhanced Styles -->
+<style>
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        #footer section > div {
+            grid-template-columns: 1fr !important;
+            gap: 2rem !important;
+        }
+        
+        .contact-info {
+            margin-top: 2rem;
+        }
+    }
+
+    /* Loader Animation */
+    .loader {
+        width: 20px;
+        height: 20px;
+        border: 3px solid rgba(255,255,255,0.3);
+        border-top-color: #fff;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    }
+
+    /* Button Enhancements */
+    button[type="submit"] {
+        color: #fff !important;
+        transition: all 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(74, 144, 226, 0.4);
+    }
+
+    /* Input Enhancements */
+    input:focus, textarea:focus {
+        outline: 2px solid #4a90e2;
+        outline-offset: 2px;
+    }
+
+    /* Social Links Hover */
+    .social-links a:hover {
+        opacity: 0.8;
+    }
+
+    @keyframes spin {
+        to { transform: rotate(360deg); }
+    }
+</style>
 
 </body>
 </html>

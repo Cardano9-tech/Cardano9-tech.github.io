@@ -102,103 +102,387 @@
     </section>
 </div>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<section>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="text" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="3"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-						</section>
-						<section class="split contact">
-							<section class="alt">
-								<h3>Address</h3>
-								<p>1234 Somewhere Road #87257<br />
-								Nashville, TN 00000-0000</p>
-							</section>
-							<section>
-								<h3>Phone</h3>
-								<p><a href="#">(000) 000-0000</a></p>
-							</section>
-							<section>
-								<h3>Email</h3>
-                                                                <p><a href="mailto:aitechcardano9@gmail.com">aitechcardano9@gmail.com</a></p>
-							</section>
-							<section>
-								<h3>Social</h3>
-								<ul class="icons alt">
-									<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</section>
-						</section>
-					</footer>
+				<!-- Footer Section -->
+<footer id="footer" style="background: #1a1a1a; padding: 3rem 0; color: #e0e0e0; display: flex; justify-content: space-between;">
+    <section class="footer-content">
+        <div class="footer-columns" style="display: flex; flex-wrap: wrap; justify-content: space-between;">
 
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; Cardano9</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-					</div>
+            <!-- Enhanced Contact Form -->
+            <form id="secureForm" class="footer-card contact-form" style="flex-basis: 30%; margin: 20px;">
+                <h3 class="section-title">Contact Us</h3>
+                <div class="fields">
+                    <div class="field">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" required 
+                               class="form-input"
+                               pattern="[A-Za-z ]{2,50}"
+                               title="2-50 letters only">
+                        <div class="input-feedback"></div>
+                    </div>
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" required
+                               class="form-input"
+                               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                        <div class="input-feedback"></div>
+                    </div>
+                    <div class="field">
+                        <label for="message">Message</label>
+                        <textarea name="message" required
+                                  class="form-input message-box"
+                                  maxlength="1000"></textarea>
+                        <div class="char-counter"><span>0</span>/1000</div>
+                    </div>
+                </div>
+                <input type="hidden" name="grecaptcha" id="recaptchaToken">
+                <button type="submit" class="submit-btn">
+                    <span class="btn-content">
+                        Send Securely
+                        <svg class="send-icon" viewBox="0 0 24 24">
+                            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                        </svg>
+                    </span>
+                    <div class="loader"></div>
+                </button>
+            </form>
 
-			</div>
+            <!-- Enhanced Get in Touch Section -->
+            <div class="footer-card contact-info" style="flex-basis: 30%; margin: 20px;">
+                <h3 class="section-title">Get in Touch</h3>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt contact-icon"></i>
+                        <p class="contact-text">123 Tech Valley Drive<br>Silicon Valley, CA 94000</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone contact-icon"></i>
+                        <a href="tel:+15551234567" class="contact-link">+1 (555) 123-4567</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <a href="mailto:aitechcardano9@gmail.com" class="contact-link">aitechcardano9@gmail.com</a>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/Cardano9-tech" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://x.com/cardano958729" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://linkedin.com/company/aitech-cardano9" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+            <!-- Enhanced Copyright Section -->
+            <div id="copyright" class="copyright-section" style="flex-basis: 100%; text-align: center; margin-top: 20px;">
+                <ul class="copyright-list">
+                    <li class="copyright-item">&copy; <span id="currentYear">2023</span> AITECH by Cardano9</li>
+                    <li class="copyright-item">Design: <a href="https://html5up.net" class="design-credit" target="_blank" rel="noopener">HTML5 UP</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</footer>
 
-		 <title>Custom Notification</title>
-    <style>
-        /* CSS for the notification */
-        body {
-            font-family: Arial, sans-serif;
+<!-- Enhanced Script Handling -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('secureForm');
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const RECAPTCHA_SITE_KEY = '6LcKSccqAAAAAIW-vOs7nH8fnoHIhOPU6v249lMF';
+    const API_URL = 'https://script.google.com/macros/s/AKfycbwCGRiK1kijgn90yTfGdPzDXPws2Rh19SnVjyzlyn-IclDUph4pirb9PqN3L8w5996i/exec';
+
+    // Initialize reCAPTCHA
+    const initRecaptcha = () => {
+        grecaptcha.ready(() => {
+            grecaptcha.execute(RECAPTCHA_SITE_KEY, {action: 'submit'})
+                .then(token => {
+                    document.getElementById('recaptchaToken').value = token;
+                }).catch(console.error);
+        });
+    };
+
+    // Form submission handler
+    const handleFormSubmit = async (e) => {
+        e.preventDefault();
+        const originalBtnHTML = submitBtn.innerHTML;
+        
+        try {
+            // Disable button and show loader
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `
+                <span style="display: flex; align-items: center; gap: 0.8rem;">
+                    <div class="loader"></div>
+                    Sending...
+                </span>
+            `;
+
+            // Get new reCAPTCHA token
+            const token = await grecaptcha.execute(RECAPTCHA_SITE_KEY, {action: 'submit'});
+            
+            // Submit form data
+            const response = await fetch(API_URL, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                body: new URLSearchParams({
+                    name: form.name.value,
+                    email: form.email.value,
+                    message: form.message.value,
+                    token: token
+                })
+            });
+
+            // Handle HTTP errors
+            if (!response.ok) {
+                const error = await response.json().catch(() => ({message: 'Unknown server error'}));
+                throw new Error(error.message || 'Request failed');
+            }
+
+            // Process response
+            const result = await response.json();
+            if (!result.success) throw new Error(result.message);
+
+            // Success handling
+            form.reset();
+            alert('Message sent successfully!');
+
+        } catch (error) {
+            // Enhanced error handling
+            let message = 'Submission failed. Please try again.';
+            if (error.name === 'TypeError') message = 'Network error - check your connection';
+            else if (error.message) message = error.message;
+            
+            alert(`Error: ${message}`);
+        } finally {
+            // Reset UI
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnHTML;
+            initRecaptcha();
         }
+    };
 
-        .notification {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #3d3d3d;
-            color: #cccccc;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 300px;
-        }
+    // Initial setup
+    initRecaptcha();
+    form.addEventListener('submit', handleFormSubmit);
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+});
+</script>
 
-        .close-btn {
-            color: red;
-            font-size: 24px;
-            cursor: pointer;
-            margin-left: 15px;
-        }
+<style>
+/* Enhanced Styles */
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #2d5aa3;
+    --background-dark: #1a1a1a;
+    --background-medium: #2a2a2a;
+    --text-light: #e0e0e0;
+    --text-muted: #a0a0a0;
+    --transition-speed: 0.3s;
+}
 
-        .close-btn:hover {
-            color: darkred;
-        }
+/* Contact Form Enhancements */
+.contact-form {
+    position: relative;
+    overflow: hidden;
+}
+
+.form-input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #3a3a3a;
+    border-radius: 8px;
+    background: var(--background-dark);
+    color: var(--text-light);
+    transition: all var(--transition-speed) ease;
+}
+
+.form-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px rgba(74, 144, 226, 0.3);
+    outline: none;
+}
+
+.form-input:hover {
+    transform: translateY(-2px);
+}
+
+.message-box {
+    height: 120px;
+    resize: vertical;
+    min-height: 100px;
+    max-height: 50vh;
+}
+
+.char-counter {
+    text-align: right;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: #fff;
+    padding: 1.2rem 2.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    transition: all var(--transition-speed) ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(74, 144, 226, 0.4);
+}
+
+.send-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+    transition: transform var(--transition-speed) ease;
+}
+
+.submit-btn:hover .send-icon {
+    transform: translateX(3px);
+}
+
+/* Get in Touch Enhancements */
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    transition: all var(--transition-speed) ease;
+}
+
+.contact-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateX(5px);
+}
+
+.contact-icon {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    min-width: 30px;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.social-link {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    transition: all var(--transition-speed) ease;
+}
+
+.social-link:hover {
+    transform: translateY(-3px);
+    opacity: 0.8;
+}
+
+/* Copyright Enhancements */
+.copyright-section {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.design-credit {
+    position: relative;
+}
+
+.design-credit::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width var(--transition-speed) ease;
+}
+
+.design-credit:hover::after {
+    width: 100%;
+}
+
+/* Input Validation Styles */
+.input-feedback {
+    height: 20px;
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+}
+
+.form-input:valid + .input-feedback::after {
+    content: '✓';
+    color: #4CAF50;
+    margin-left: 0.5rem;
+}
+
+.form-input:invalid:not(:placeholder-shown) + .input-feedback::after {
+    content: '⚠ Please enter a valid value';
+    color: #f44336;
+}
+
+/* Responsive Enhancements */
+@media (max-width: 768px) {
+    .contact-item {
+        padding: 0.75rem;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    .form-input {
+        padding: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .contact-icon {
+        font-size: 1.8rem;
+    }
+    
+    .message-box {
+        height: 150px;
+    }
+    
+    footer {
+        flex-direction: column;
+    }
+    
+    .footer-card {
+        margin: 20px 0;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -237,6 +521,6 @@
 
 	</body>
 </html>
-
-	</body>
+		
+</body>
 </html>

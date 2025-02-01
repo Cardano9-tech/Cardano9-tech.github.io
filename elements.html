@@ -560,14 +560,14 @@ print 'It took ' + i + ' iterations to sort the deck.';
         </ul>
     </div>
 </footer>
-				
+
+<sript>
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('secureForm');
     const submitBtn = form.querySelector('button[type="submit"]');
-    const RECAPTCHA_SITE_KEY = '6LcKSccqAAAAAIW-vOs7nH8fnoHIhOPU6v249lMF';
     const API_URL = 'https://script.google.com/macros/s/AKfycbwCGRiK1kijgn90yTfGdPzDXPws2Rh19SnVjyzlyn-IclDUph4pirb9PqN3L8w5996i/exec';
 
-    // Form submission handler
+    // Form submission handler (No reCAPTCHA involved)
     const handleFormSubmit = async (e) => {
         e.preventDefault();
         const originalBtnHTML = submitBtn.innerHTML;
@@ -582,32 +582,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 </span>
             `;
 
-            // Ensure reCAPTCHA is ready and generate the token
-            const token = await new Promise((resolve, reject) => {
-                grecaptcha.ready(() => {
-                    grecaptcha.execute(RECAPTCHA_SITE_KEY, {action: 'submit'})
-                        .then(resolve)
-                        .catch(reject);
-                });
-            });
-
-            // If no token is generated, prevent form submission
-            if (!token) {
-                alert('reCAPTCHA token generation failed, please try again.');
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = originalBtnHTML;
-                return;
-            }
-
-            // Submit form data
+            // Submit form data without reCAPTCHA token
             const response = await fetch(API_URL, {
                 method: 'POST',
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 body: new URLSearchParams({
                     name: form.name.value,
                     email: form.email.value,
-                    message: form.message.value,
-                    token: token
+                    message: form.message.value
+                    // No token here since we're removing reCAPTCHA
                 })
             });
 
@@ -645,6 +628,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Set current year in footer (optional)
     document.getElementById('currentYear').textContent = new Date().getFullYear();
 });
+</sript>
 
 
 	<style>

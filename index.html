@@ -321,13 +321,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const RECAPTCHA_SITE_KEY = '6LcKSccqAAAAAIW-vOs7nH8fnoHIhOPU6v249lMF';
     const API_URL = 'https://script.google.com/macros/s/AKfycbwCGRiK1kijgn90yTfGdPzDXPws2Rh19SnVjyzlyn-IclDUph4pirb9PqN3L8w5996i/exec';
 
-    // Initialize reCAPTCHA
+    // Initialize reCAPTCHA (run this once)
     const initRecaptcha = () => {
         grecaptcha.ready(() => {
-            grecaptcha.execute(RECAPTCHA_SITE_KEY, {action: 'submit'})
+            grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: 'submit' })
                 .then(token => {
+                    // Set the token to the hidden input field
                     document.getElementById('recaptchaToken').value = token;
-                }).catch(console.error);
+                })
+                .catch(console.error);
         });
     };
 
@@ -346,10 +348,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 </span>
             `;
 
-            // Get new reCAPTCHA token
+            // Ensure we get a fresh token during submission
             const token = await grecaptcha.execute(RECAPTCHA_SITE_KEY, {action: 'submit'});
-            
-            // Submit form data
+
+            // Submit form data with the reCAPTCHA token
             const response = await fetch(API_URL, {
                 method: 'POST',
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
@@ -363,11 +365,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Handle HTTP errors
             if (!response.ok) {
-                const error = await response.json().catch(() => ({message: 'Unknown server error'}));
+                const error = await response.json().catch(() => ({ message: 'Unknown server error' }));
                 throw new Error(error.message || 'Request failed');
             }
 
-            // Process response
+            // Process response from the server
             const result = await response.json();
             if (!result.success) throw new Error(result.message);
 
@@ -380,19 +382,20 @@ document.addEventListener('DOMContentLoaded', () => {
             let message = 'Submission failed. Please try again.';
             if (error.name === 'TypeError') message = 'Network error - check your connection';
             else if (error.message) message = error.message;
-            
+
             alert(`Error: ${message}`);
         } finally {
             // Reset UI
             submitBtn.disabled = false;
             submitBtn.innerHTML = originalBtnHTML;
-            initRecaptcha();
         }
     };
 
-    // Initial setup
+    // Initial setup for reCAPTCHA
     initRecaptcha();
     form.addEventListener('submit', handleFormSubmit);
+
+    // Set current year in footer
     document.getElementById('currentYear').textContent = new Date().getFullYear();
 });
 </script>

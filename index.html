@@ -313,79 +313,86 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
- <!-- Enhanced Script Handling -->
+<!-- Enhanced Script Handling -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('secureForm');
     const submitBtn = form.querySelector('button[type="submit"]');
-    
-    // Ensure reCAPTCHA loads before first form submission
+    const RECAPTCHA_SITE_KEY = '6LcKSccqAAAAAIW-vOs7nH8fnoHIhOPU6v249lMF';
+    const API_URL = 'https://script.google.com/macros/s/AKfycbwCGRiK1kijgn90yTfGdPzDXPws2Rh19SnVjyzlyn-IclDUph4pirb9PqN3L8w5996i/exec';
+
+    // Initialize reCAPTCHA
     const initRecaptcha = () => {
         grecaptcha.ready(() => {
-            grecaptcha.execute('6LcKSccqAAAAAIW-vOs7nH8fnoHIhOPU6v249lMF', {action: 'submit'})
+            grecaptcha.execute(RECAPTCHA_SITE_KEY, {action: 'submit'})
                 .then(token => {
                     document.getElementById('recaptchaToken').value = token;
-                }).catch(err => {
-                    console.error("reCAPTCHA error:", err);
-                });
+                }).catch(console.error);
         });
     };
-
-    // Load reCAPTCHA on page load
-    initRecaptcha();
 
     // Form submission handler
     const handleFormSubmit = async (e) => {
         e.preventDefault();
-        submitBtn.disabled = true;
         const originalBtnHTML = submitBtn.innerHTML;
-
+        
         try {
-            // Ensure reCAPTCHA is executed before submission
-            const token = await grecaptcha.execute('6LcKSccqAAAAAIW-vOs7nH8fnoHIhOPU6v249lMF', {action: 'submit'});
-            document.getElementById('recaptchaToken').value = token;
-
-            // Update button state
-            submitBtn.innerHTML = 
+            // Disable button and show loader
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `
                 <span style="display: flex; align-items: center; gap: 0.8rem;">
                     <div class="loader"></div>
                     Sending...
                 </span>
-            ;
+            `;
 
-            // Submit form
-            const response = await fetch('https://script.google.com/macros/s/AKfycbwCGRiK1kijgn90yTfGdPzDXPws2Rh19SnVjyzlyn-IclDUph4pirb9PqN3L8w5996i/exec', {
+            // Get new reCAPTCHA token
+            const token = await grecaptcha.execute(RECAPTCHA_SITE_KEY, {action: 'submit'});
+            
+            // Submit form data
+            const response = await fetch(API_URL, {
                 method: 'POST',
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 body: new URLSearchParams({
                     name: form.name.value,
                     email: form.email.value,
                     message: form.message.value,
                     token: token
-                }),
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+                })
             });
 
+            // Handle HTTP errors
+            if (!response.ok) {
+                const error = await response.json().catch(() => ({message: 'Unknown server error'}));
+                throw new Error(error.message || 'Request failed');
+            }
+
+            // Process response
             const result = await response.json();
-            if (!result.success) throw new Error(result.message || 'Submission failed');
+            if (!result.success) throw new Error(result.message);
 
             // Success handling
             form.reset();
             alert('Message sent successfully!');
 
         } catch (error) {
-            alert(Error: ${error.message});
+            // Enhanced error handling
+            let message = 'Submission failed. Please try again.';
+            if (error.name === 'TypeError') message = 'Network error - check your connection';
+            else if (error.message) message = error.message;
+            
+            alert(`Error: ${message}`);
         } finally {
-            // Reset button state
-            submitBtn.innerHTML = originalBtnHTML;
+            // Reset UI
             submitBtn.disabled = false;
-            initRecaptcha(); // Reload reCAPTCHA after submission
+            submitBtn.innerHTML = originalBtnHTML;
+            initRecaptcha();
         }
     };
 
-    // Attach event listener
+    // Initial setup
+    initRecaptcha();
     form.addEventListener('submit', handleFormSubmit);
-
-    // Update copyright year dynamically
     document.getElementById('currentYear').textContent = new Date().getFullYear();
 });
 </script>

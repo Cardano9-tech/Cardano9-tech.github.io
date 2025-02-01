@@ -102,61 +102,261 @@
     </section>
 </div>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<section>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="text" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="3"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-						</section>
-						<section class="split contact">
-							<section class="alt">
-								<h3>Address</h3>
-								<p>1234 Somewhere Road #87257<br />
-								Nashville, TN 00000-0000</p>
-							</section>
-							<section>
-								<h3>Phone</h3>
-								<p><a href="#">(000) 000-0000</a></p>
-							</section>
-							<section>
-								<h3>Email</h3>
-                                                                <p><a href="mailto:aitechcardano9@gmail.com">aitechcardano9@gmail.com</a></p>
-							</section>
-							<section>
-								<h3>Social</h3>
-								<ul class="icons alt">
-									<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</section>
-						</section>
-					</footer>
+<!-- Footer Section -->
+<footer id="footer" style="background: #1a1a1a; color: #e0e0e0;">
+    <section class="footer-content">
+        <div class="footer-columns">
 
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; Cardano9</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-					</div>
+            <!-- Contact Form -->
+            <form id="secureForm" class="footer-card">
+                <h3 style="color: #4a90e2; margin-bottom: 1.5rem;">Contact Us</h3>
+                <div class="fields" style="display: grid; gap: 1.2rem;">
+                    <div class="field">
+                        <label for="name" style="display: block; margin-bottom: 0.5rem; color: #e0e0e0;">Name</label>
+                        <input type="text" name="name" required 
+                            style="width: 100%; padding: 0.8rem; border: 1px solid #3a3a3a; border-radius: 4px; background: #1a1a1a; color: #fff;"
+                            pattern="[A-Za-z ]{2,50}" 
+                            title="2-50 letters only">
+                    </div>
+                    <div class="field">
+                        <label for="email" style="display: block; margin-bottom: 0.5rem; color: #e0e0e0;">Email</label>
+                        <input type="email" name="email" required
+                            style="width: 100%; padding: 0.8rem; border: 1px solid #3a3a3a; border-radius: 4px; background: #1a1a1a; color: #fff;"
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                    </div>
+                    <div class="field">
+                        <label for="message" style="display: block; margin-bottom: 0.5rem; color: #e0e0e0;">Message</label>
+                        <textarea name="message" required
+                                style="width: 100%; padding: 0.8rem; border: 1px solid #3a3a3a; border-radius: 4px; background: #1a1a1a; color: #fff; height: 120px;"
+                                maxlength="1000"></textarea>
+                    </div>
+                </div>
+                <input type="hidden" name="grecaptcha" id="recaptchaToken">
+                <button type="submit" 
+                    style="background: linear-gradient(135deg, #4a90e2 0%, #2d5aa3 100%); 
+                        color: #fff !important;
+                        padding: 1.2rem 2.5rem;
+                        border: none;
+                        border-radius: 6px;
+                        cursor: pointer;
+                        font-weight: 600;
+                        letter-spacing: 0.5px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 0.8rem;
+                        transition: all 0.3s ease;
+                        min-height: 50px;
+                        width: 100%;
+                        position: relative;">
+                    <span style="display: inline-block; vertical-align: middle; line-height: 1;">
+                        Send Securely
+                    </span>
+                </button>
+            </form>
 
-			</div>
+            <!-- Get in Touch Section -->
+            <div class="footer-card contact-info">
+                <h3 style="color: #4a90e2; margin-bottom: 1.5rem;">Get in Touch</h3>
+                <div style="display: grid; gap: 1.5rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <i class="fas fa-map-marker-alt" style="color: #4a90e2; font-size: 1.2rem;"></i>
+                        <p style="margin: 0; color: #a0a0a0;">123 Tech Valley Drive<br>Silicon Valley, CA 94000</p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <i class="fas fa-phone" style="color: #4a90e2; font-size: 1.2rem;"></i>
+                        <p style="margin: 0;"><a href="tel:+15551234567" style="color: #4a90e2; text-decoration: none;">+1 (555) 123-4567</a></p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <i class="fas fa-envelope" style="color: #4a90e2; font-size: 1.2rem;"></i>
+                        <p style="margin: 0;"><a href="mailto:aitechcardano9@gmail.com" style="color: #4a90e2; text-decoration: none;">aitechcardano9@gmail.com</a></p>
+                    </div>
+                    <div style="display: flex; gap: 1.5rem; margin-top: 1rem;">
+                        <a href="https://github.com/Cardano9-tech" target="_blank" rel="noopener noreferrer" style="color: #4a90e2; font-size: 1.5rem;">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://x.com/cardano958729" target="_blank" rel="noopener noreferrer" style="color: #4a90e2; font-size: 1.5rem;">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://linkedin.com/company/aitech-cardano9" target="_blank" rel="noopener noreferrer" style="color: #4a90e2; font-size: 1.5rem;">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Copyright Section -->
+    <div id="copyright">
+        <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="color: #a0a0a0;">&copy; <span id="currentYear">2023</span> AITECH by Cardano9</li>
+        </ul>
+    </div>
+</footer>
+				
+<!-- Enhanced Script Handling -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('secureForm');
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const RECAPTCHA_SITE_KEY = '6LcKSccqAAAAAIW-vOs7nH8fnoHIhOPU6v249lMF';
+    const API_URL = 'https://script.google.com/macros/s/AKfycbwCGRiK1kijgn90yTfGdPzDXPws2Rh19SnVjyzlyn-IclDUph4pirb9PqN3L8w5996i/exec';
+
+    // Initialize reCAPTCHA
+    const initRecaptcha = () => {
+        grecaptcha.ready(() => {
+            grecaptcha.execute(RECAPTCHA_SITE_KEY, {action: 'submit'})
+                .then(token => {
+                    document.getElementById('recaptchaToken').value = token;
+                }).catch(console.error);
+        });
+    };
+
+    // Form submission handler
+    const handleFormSubmit = async (e) => {
+        e.preventDefault();
+        const originalBtnHTML = submitBtn.innerHTML;
+        
+        try {
+            // Disable button and show loader
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `
+                <span style="display: flex; align-items: center; gap: 0.8rem;">
+                    <div class="loader"></div>
+                    Sending...
+                </span>
+            `;
+
+            // Get new reCAPTCHA token
+            const token = await grecaptcha.execute(RECAPTCHA_SITE_KEY, {action: 'submit'});
+            
+            // Submit form data
+            const response = await fetch(API_URL, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                body: new URLSearchParams({
+                    name: form.name.value,
+                    email: form.email.value,
+                    message: form.message.value,
+                    token: token
+                })
+            });
+
+            // Handle HTTP errors
+            if (!response.ok) {
+                const error = await response.json().catch(() => ({message: 'Unknown server error'}));
+                throw new Error(error.message || 'Request failed');
+            }
+
+            // Process response
+            const result = await response.json();
+            if (!result.success) throw new Error(result.message);
+
+            // Success handling
+            form.reset();
+            alert('Message sent successfully!');
+
+        } catch (error) {
+            // Enhanced error handling
+            let message = 'Submission failed. Please try again.';
+            if (error.name === 'TypeError') message = 'Network error - check your connection';
+            else if (error.message) message = error.message;
+            
+            alert(`Error: ${message}`);
+        } finally {
+            // Reset UI
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnHTML;
+            initRecaptcha();
+        }
+    };
+
+    // Initial setup
+    initRecaptcha();
+    form.addEventListener('submit', handleFormSubmit);
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+});
+</script>
+
+<style>
+/* Responsive Footer Styles */
+#footer .footer-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+#footer .footer-card {
+    background: #1a1a1a;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+#footer .contact-info p {
+    margin: 0;
+    color: #a0a0a0;
+}
+
+#footer #copyright ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #footer .footer-columns {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+
+    #footer .footer-card {
+        padding: 1.5rem;
+    }
+
+    #footer {
+        padding: 2rem 0 !important;
+    }
+
+    #footer #copyright ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    #footer .footer-columns {
+        gap: 1.5rem;
+    }
+
+    #footer .field input,
+    #footer .field textarea {
+        padding: 0.6rem !important;
+    }
+
+    #footer button[type="submit"] {
+        padding: 1rem 1.5rem !important;
+        font-size: 0.9rem;
+    }
+
+    #footer .contact-info div {
+        gap: 0.8rem !important;
+    }
+
+    #footer .fa-github,
+    #footer .fa-twitter,
+    #footer .fa-linkedin {
+        font-size: 1.2rem !important;
+    }
+}
+</style>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>

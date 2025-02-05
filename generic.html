@@ -214,13 +214,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const RECAPTCHA_SITE_KEY = '6LcKSccqAAAAAIW-vOs7nH8fnoHIhOPU6v249lMF';
     const API_URL = 'https://script.google.com/macros/s/AKfycbwCGRiK1kijgn90yTfGdPzDXPws2Rh19SnVjyzlyn-IclDUph4pirb9PqN3L8w5996i/exec';
 
-    // Initialize reCAPTCHA
-    const initRecaptcha = () => {
-        grecaptcha.ready(() => {
-            grecaptcha.execute(RECAPTCHA_SITE_KEY, {action: 'submit'})
-                .then(token => {
-                    document.getElementById('recaptchaToken').value = token;
-                }).catch(console.error);
+    // Helper function to get the reCAPTCHA token when ready
+    const getRecaptchaToken = () => {
+        return new Promise((resolve, reject) => {
+            grecaptcha.ready(() => {
+                grecaptcha.execute(RECAPTCHA_SITE_KEY, {action: 'submit'})
+                    .then(resolve)
+                    .catch(reject);
+            });
         });
     };
 
@@ -239,8 +240,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 </span>
             `;
 
-            // Get new reCAPTCHA token
-            const token = await grecaptcha.execute(RECAPTCHA_SITE_KEY, {action: 'submit'});
+            // Get a new reCAPTCHA token (ensured to be ready)
+            const token = await getRecaptchaToken();
             
             // Submit form data
             const response = await fetch(API_URL, {
@@ -279,16 +280,15 @@ document.addEventListener('DOMContentLoaded', () => {
             // Reset UI
             submitBtn.disabled = false;
             submitBtn.innerHTML = originalBtnHTML;
-            initRecaptcha();
         }
     };
 
-    // Initial setup
-    initRecaptcha();
+    // Setup event listener and other UI initialization
     form.addEventListener('submit', handleFormSubmit);
     document.getElementById('currentYear').textContent = new Date().getFullYear();
 });
 </script>
+
 
 <style>
 /* Responsive Footer Styles */
